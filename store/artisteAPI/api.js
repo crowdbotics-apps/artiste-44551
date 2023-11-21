@@ -1,72 +1,50 @@
-import axios from "axios";
+import axios from "axios"
 const artisteAPI = axios.create({
   baseURL: "https://artiste-44551.botics.co",
-  headers: {
-    Accept: "application/json",
-    "Content-Type": "application/json"
-  }
-});
-
+  headers: { Accept: "application/json", "Content-Type": "application/json" }
+})
 function api_docs_schema_retrieve(payload) {
-  return artisteAPI.get(`/api-docs/schema/`, {
-    params: {
-      lang: payload.lang
-    }
-  });
+  return artisteAPI.get(`/api-docs/schema/`, { params: { lang: payload.lang } })
 }
-
 function api_v1_login_create(payload) {
-  return artisteAPI.post(`/api/v1/login/`, payload);
+  return artisteAPI.post(`/api/v1/login/`, payload)
 }
-
 function api_v1_signup_create(payload) {
-  return artisteAPI.post(`/api/v1/signup/`, payload);
+  return artisteAPI.post(`/api/v1/signup/`, payload)
 }
-
 function rest_auth_login_create(payload) {
-  return artisteAPI.post(`/rest-auth/login/`, payload);
+  return artisteAPI.post(`/rest-auth/login/`, payload)
 }
-
 function rest_auth_logout_create(payload) {
-  return artisteAPI.post(`/rest-auth/logout/`);
+  return artisteAPI.post(`/rest-auth/logout/`)
 }
-
 function rest_auth_password_change_create(payload) {
-  return artisteAPI.post(`/rest-auth/password/change/`, payload);
+  return artisteAPI.post(`/rest-auth/password/change/`, payload)
 }
-
 function rest_auth_password_reset_create(payload) {
-  return artisteAPI.post(`/rest-auth/password/reset/`, payload);
+  return artisteAPI.post(`/rest-auth/password/reset/`, payload)
 }
-
 function rest_auth_password_reset_confirm_create(payload) {
-  return artisteAPI.post(`/rest-auth/password/reset/confirm/`, payload);
+  return artisteAPI.post(`/rest-auth/password/reset/confirm/`, payload)
 }
-
 function rest_auth_registration_create(payload) {
-  return artisteAPI.post(`/rest-auth/registration/`, payload);
+  return artisteAPI.post(`/rest-auth/registration/`, payload)
 }
-
 function rest_auth_registration_resend_email_create(payload) {
-  return artisteAPI.post(`/rest-auth/registration/resend-email/`, payload);
+  return artisteAPI.post(`/rest-auth/registration/resend-email/`, payload)
 }
-
 function rest_auth_registration_verify_email_create(payload) {
-  return artisteAPI.post(`/rest-auth/registration/verify-email/`, payload);
+  return artisteAPI.post(`/rest-auth/registration/verify-email/`, payload)
 }
-
 function rest_auth_user_retrieve(payload) {
-  return artisteAPI.get(`/rest-auth/user/`);
+  return artisteAPI.get(`/rest-auth/user/`)
 }
-
 function rest_auth_user_update(payload) {
-  return artisteAPI.put(`/rest-auth/user/`, payload);
+  return artisteAPI.put(`/rest-auth/user/`, payload)
 }
-
 function rest_auth_user_partial_update(payload) {
-  return artisteAPI.patch(`/rest-auth/user/`, payload);
+  return artisteAPI.patch(`/rest-auth/user/`, payload)
 }
-
 export const apiService = {
   api_docs_schema_retrieve,
   api_v1_login_create,
@@ -82,4 +60,4 @@ export const apiService = {
   rest_auth_user_retrieve,
   rest_auth_user_update,
   rest_auth_user_partial_update
-};
+}
